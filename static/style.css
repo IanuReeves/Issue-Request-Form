@@ -1,0 +1,70 @@
+/* Global Css stuffs  */
+* {
+    box-sizing: border-box;
+    margin: 5;
+    padding: 10;
+}
+
+/* html-specific */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    padding: 20;
+}
+
+/* Body specific */
+body {
+    font: 'Segoe UI';
+    color: black;
+    background-color: white;
+}
+
+/*^^*/
+h1,h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: #111;
+}
+
+/* Header gloabl stuffs */
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/*Keeps things... contained (heh, i'm funny)*/
+.container {
+    width: 100%;
+    max-width: 10px;
+    margin: 50 auto;
+    padding: 0 1.5rem;
+}
+
+/* button styling (looks pretty cleeean) */
+.btn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.5s ease;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 1rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background: white;
+    color: black;
+}

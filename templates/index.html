@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Issue Report Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <form action="/" method="POST">
+        <h1>Tell us more about your issue</h1>
+        <label for="user_name">Name (First, Last)</label><br>
+        <input type="text" id="user_name" name="name" placeholder="Sarah Williams"><br><br>
+
+        <label for="user_email">Email:</label><br>
+        <input type="text" id="user_email" name="user_email" placeholder="joejoh84@domain.com"><br><br>
+
+        <label for="bug_description">Describe the issue you're having:</label><br>
+        <input type="text" id="bug_description" name="bug_description" placeholder="Be as specific as possible"><br><br>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        
+        <button type="submit">Submit</button>
+        
+        <h4>We'll make sure to get back to you asap!</h4>
+
+        <h4>This form may or may not never see the open internet. Submission is at the user's discretion.</h4>
+    </form>
+</body>
+</html>
