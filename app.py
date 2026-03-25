@@ -1,3 +1,20 @@
+'''
+Please Read!
+
+I didn't want to notarize the html, so here's the jist:
+
+- form section creates input sections attached to variables
+- error correction is done mostly in app.py as explained later, but visual indicator is above submit
+
+I wanted to add a dropdown, but I didn't have enough time
+
+
+all code and form ideas were by me, however I will mark down where I was influenced by AI through a #*#
+'''
+
+
+
+
 # Import required prerequisites
 from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -24,7 +41,7 @@ with app.app_context():
 @app.route('/', methods=['GET', 'POST'])
 # defines the site by taking the submitted form's items and setting them to variables for later
 def home():
-    error = None
+    error = None #*# Google's AI overview told me the jist on how error correction could be made
     if request.method == 'POST':
         user_name = request.form['name']
         user_email = request.form['user_email']
@@ -32,7 +49,7 @@ def home():
         print(user_name, user_email, bug_description)
         if not user_name or not user_email or not bug_description:
             error = 'Please fill out all forms before submitting'
-        elif not re.match(r'^[^@]+@[^@]+\.[^@]+$', user_email): # I did use google's ai overview to yoink the formula for this. Sorry if that's not allowed
+        elif not re.match(r'^[^@]+@[^@]+\.[^@]+$', user_email): #*# - I used google's ai overview to yoink the formula for this. Sorry if that's not allowed
             error = 'Email does not follow standard notation'
         else:
             new_issue = Issue(
@@ -41,7 +58,7 @@ def home():
                 issue_description=bug_description
             )
             db.session.add(new_issue)
-            db.session.commit()
+            db.session.commit() #*# 
             return redirect(url_for('confirmation')) # redirects user to confirmations page after submission
     # sends the user to the issues page
     return render_template('index.html', error=error)
