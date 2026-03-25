@@ -41,7 +41,7 @@ with app.app_context():
 @app.route('/', methods=['GET', 'POST'])
 # defines the site by taking the submitted form's items and setting them to variables for later
 def home():
-    error = None #*# Google's AI overview told me the jist on how error correction could be made
+    error = None #*# Google's AI overview explained the jist on how error correction could be made
     if request.method == 'POST':
         user_name = request.form['name']
         user_email = request.form['user_email']
@@ -58,7 +58,7 @@ def home():
                 issue_description=bug_description
             )
             db.session.add(new_issue)
-            db.session.commit() #*# 
+            db.session.commit()
             return redirect(url_for('confirmation')) # redirects user to confirmations page after submission
     # sends the user to the issues page
     return render_template('index.html', error=error)
